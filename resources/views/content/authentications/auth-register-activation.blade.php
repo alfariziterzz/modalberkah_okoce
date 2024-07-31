@@ -66,7 +66,7 @@ $customizerHidden = 'customizer-hide';
             </a>
           </div>
           <!-- /Logo -->
-          <h4 class="mb-1 pt-2">Activation Account 🔒</h4>
+          <h4 class="mb-1 pt-2">Activation Account</h4>
               @if ($success)
               <div class="alert alert-success alert-dismissible" role="alert">
                 {!! $success !!}

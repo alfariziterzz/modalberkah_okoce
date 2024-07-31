@@ -1,15 +1,18 @@
 @extends('layouts.client.app')
 
 @section('content')
-<div class="container-wrapper">
-  <div class="banner">
+<div class="banner">
     <div class="container">
-      <h1 class="font-weight-semibold" style="color: #1075B0;">MODAL <span style="color: #E3242B;">BERKAH</span></h1>
-      <h6 class="font-weight-normal text-muted pb-3">Merupakan program keumatan berbasis lembaga atau masjid yang bertujuan untuk menghimpun dan menyalurkan infaq dalam bentuk pinjaman dana kepada pelaku UMKM tanpa adanya riba</h6>
-      <div>
-        <a href={{ route('mesjid.register') }} class="btn btn-opacity btn-info ml-1">Registrasi Mesjid Sekarang</a>
+      <div class="row">
+        <div class="col-md-6 content">
+          <h1>Modal Berkah</h1>
+          <p>Merupakan program keumatan berbasis lembaga atau masjid yang bertujuan untuk menghimpun dan menyalurkan infaq dalam bentuk pinjaman dana kepada pelaku UMKM tanpa adanya riba.</p>
+          <a href="{{ route('mesjid.register')}}" class="btn btn-custom">Register Now</a>
+        </div>
+        <div class="col-md-6">
+          <img src="{{ asset('assets/landing-page-sso/images/Group171.svg') }}" alt="Banner Image">
+        </div>
       </div>
-      <img src="{{ asset('assets/landing-page-sso/images/Group171.svg') }}" alt="" class="img-fluid">
     </div>
   </div>
 </div>
@@ -45,47 +48,25 @@
       </div>
     </section>
     <section class="case-studies mt-5" id="gallery-section">
-      <div class="row grid-margin">
-        <div class="col-12 text-center pb-5">
-          <h2 style="color: #1075B0; font-weight: 600;">Solusi Kemajuan UMKM tanpa Riba, Dimulai Dari Sini</h2>
+    <div class="container">
+          <div class="col-12 text-center pb-5">
+            <h2 style="color: #1075B0; font-weight: 600;">Solusi Kemajuan UMKM tanpa Riba, Dimulai Dari Sini</h2>
         </div>
-        <div class="col-12 col-md-6 col-lg-3 stretch-card mb-3 mb-lg-0" data-aos="zoom-in">
-          <div class="card color-cards">
-            <div class="card-body p-0">
-              <div class="card-image pop">
-                <img src="{{ asset('assets/landing-page-sso/images/oke1.jpeg') }}" alt="Gambar 1">
-              </div>
+        <div class="row poster-row">
+            <div class="col-md-3 col-sm-6 poster">
+                <img src="{{ asset('assets/landing-page-sso/images/oke1.jpeg') }}" alt="Gambar 1" class="img-fluid">
             </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-3 stretch-card mb-3 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
-          <div class="card color-cards">
-            <div class="card-body p-0">
-              <div class="card-image pop">
-                <img src="{{ asset('assets/landing-page-sso/images/foto2.jpeg') }}" alt="Gambar 2">
-              </div>
+            <div class="col-md-3 col-sm-6 poster">
+                <img src="{{ asset('assets/landing-page-sso/images/foto2.jpeg') }}" alt="Gambar 2" class="img-fluid">
             </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-3 stretch-card mb-3 mb-lg-0" data-aos="zoom-in" data-aos-delay="400">
-          <div class="card color-cards">
-            <div class="card-body p-0">
-              <div class="card-image pop">
-                <img src="{{ asset('assets/landing-page-sso/images/foto3.jpeg') }}" alt="Gambar 3">
-              </div>
+            <div class="col-md-3 col-sm-6 poster">
+                <img src="{{ asset('assets/landing-page-sso/images/foto3.jpeg') }}" alt="Gambar 3" class="img-fluid">
             </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-3 stretch-card" data-aos="zoom-in" data-aos-delay="600">
-          <div class="card color-cards">
-            <div class="card-body p-0">
-              <div class="card-image pop">
-                <img src="{{ asset('assets/landing-page-sso/images/4.jpeg') }}" alt="Gambar 4">
-              </div>
+            <div class="col-md-3 col-sm-6 poster">
+                <img src="{{ asset('assets/landing-page-sso/images/4.jpeg') }}" alt="Gambar 4" class="img-fluid">
             </div>
-          </div>
         </div>
-      </div>
+    </div>
     </section>
     <section class="case-studies mt-5" id="news-section">
       <div class="col-12 text-center pb-5">
@@ -211,4 +192,48 @@
         $('#imagemodal').modal('show');   
       });		
     });
-  </script>
+</script>
+
+<style>
+.poster img {
+  width: 100%; /* Ensure images take full width of the parent */
+  height: 250px; /* Set a fixed height */
+  object-fit: cover; /* Ensures the images cover the area without distortion */
+  transition: transform 0.5s ease; /* Smooth transition for the zoom effect */
+}
+.poster img:hover {
+  transform: scale(1.1); /* Scale the image to 110% on hover */
+}
+</style>
+
+<style>
+    .banner {
+      background-color: #f8f9fa;
+      padding: 50px 0;
+    }
+    .banner img {
+      width: 100%;
+    }
+    .banner .content {
+      max-width: 600px;
+      margin: auto;
+    }
+    .banner h1 {
+      color: 404040; 
+      font-size: 3rem;
+      font-weight: bold;
+    }
+    .banner p {
+      font-size: 1.2rem;
+    }
+    .banner .btn-custom {
+      background-color: #1075B0;
+      color: white;
+      font-size: 1.2rem;
+      padding: 10px 20px;
+      border: none;
+    }
+    .banner .btn-custom:hover {
+      background-color: #0a5b87;
+    }
+  </style>

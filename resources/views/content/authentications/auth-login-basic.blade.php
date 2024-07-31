@@ -27,28 +27,8 @@ $customizerHidden = 'customizer-hide';
 @endsection
 
 @section('content')
-<div class="authentication-wrapper authentication-cover authentication-bg">
-  <div class="authentication-inner row">
-    <!-- /Left Text -->
-    <div class="d-none d-lg-flex col-lg-7 p-0">
-      <div class="auth-cover-bg auth-cover-bg-color d-flex justify-content-center align-items-center">
-        <img
-          src="{{ asset('assets/img/illustrations/auth-login-illustration-light.png') }}"
-          alt="auth-login-cover"
-          class="img-fluid my-5 auth-illustration"
-          data-app-light-img="illustrations/auth-login-illustration-light.png"
-          data-app-dark-img="illustrations/auth-login-illustration-dark.png" />
-
-        <img
-          src="{{ asset('assets/img/illustrations/bg-shape-image-light.png') }}"
-          alt="auth-login-cover"
-          class="platform-bg"
-          data-app-light-img="illustrations/bg-shape-image-light.png"
-          data-app-dark-img="illustrations/bg-shape-image-dark.png" />
-      </div>
-    </div>
-    <!-- /Left Text -->
-
+<div class="authentication-wrapper authentication-bg">
+  <div class="authentication-inner row d-flex justify-content-center align-items-center vh-100">
     <!-- Login -->
     <div class="d-flex col-12 col-lg-5 align-items-center p-sm-5 p-4">
       <div class="w-px-400 mx-auto">
@@ -59,7 +39,7 @@ $customizerHidden = 'customizer-hide';
           </a>
         </div>
         <!-- /Logo -->
-        <h3 class="mb-1 fw-bold">Welcome to Modal Berkah! 👋</h3>
+        <h3 class="mb-1 fw-bold">Welcome to Modal Berkah</h3>
         <p class="mb-4">Please sign-in to your account and start the adventure</p>
         @if ($message = Session::get('error'))
         <div class="alert alert-danger alert-dismissible" role="alert">
