@@ -66,7 +66,7 @@ $customizerHidden = 'customizer-hide';
             </a>
           </div>
           <!-- /Logo -->
-          <h4 class="mb-1 pt-2">Forgot Password? 🔒</h4>
+          <h4 class="mb-1 pt-2">Forgot Password?</h4>
           <p class="mb-4">Enter your email and we'll send you instructions to reset your password</p>
           @if ($message = Session::get('error'))
           <div class="alert alert-danger alert-dismissible" role="alert">

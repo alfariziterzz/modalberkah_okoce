@@ -66,7 +66,7 @@ $customizerHidden = 'customizer-hide';
             </a>
           </div>
           <!-- /Logo -->
-          <h4 class="mb-1 pt-2">Reset Password 🔒</h4>
+          <h4 class="mb-1 pt-2">Reset Password</h4>
               <p class="mb-4">for <span class="fw-bold">{{ $email }}</span></p>
               @if ($message = Session::get('error'))
               <div class="alert alert-danger alert-dismissible" role="alert">

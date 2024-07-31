@@ -42,7 +42,7 @@ $customizerHidden = 'customizer-hide';
             </a>
           </div>
           <!-- /Logo -->
-          {{-- <h4 class="mb-1 pt-2">Adventure starts here 🚀</h4> --}}
+          {{-- <h4 class="mb-1 pt-2">Adventure starts here</h4> --}}
           <p class="mb-4">Silahkan lengkapi Form</p>
           @if ($errors->any())
             <div class="alert alert-danger">
