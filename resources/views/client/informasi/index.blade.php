@@ -36,6 +36,18 @@
                 </div>
             </div>
         </section>
+        <section class="video-section mt-5">
+            <div class="content-header text-center">
+                <h2>Video <span style="color: #1075B0;">Penjelasan </span> Program <span style="font-weight: 600">Modal Berkah</span></h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8 mt-5">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Ty4PuC0Yl_4?si=xrfhM30XSCZVOYn6" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 </div>
 @endsection
@@ -45,5 +57,8 @@
     .justify-text-mobile {
         text-align: justify;
     }
+}
+.video-section {
+    margin-top: 50px;
 }
 </style>

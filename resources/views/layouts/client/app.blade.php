@@ -60,6 +60,7 @@
     }
     .navbar-nav .nav-item .nav-link.active {
       color: #E3242B !important;
+      font-weight: bold;
     }
     @media (max-width: 767px) {
       .contact-info {
@@ -76,7 +77,7 @@
     }
   </style>
 </head>
-<body id="body" data-spy="scroll" data-target=".navbar" data-offset="100">
+<body id="body">
   <header id="header-section">
     <nav class="navbar navbar-expand-lg pl-3 pl-sm-0" id="navbar">
       <div class="container">
@@ -98,21 +99,21 @@
               <button class="navbar-toggler close-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="mdi mdi-close navbar-toggler-icon pl-5"></span>
               </button>
-              </li>
-            <li class="nav-item">
-              <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="{{ url('/') }}">BERANDA<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {{ Request::is('gallery-section') ? 'active' : '' }}" href="{{ url('/') }}">GALERI</a>
+              <a class="nav-link" href="{{ url('/') }}" data-page="home">BERANDA</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {{ Request::is('news-section') ? 'active' : '' }}" href="{{ url('/') }}">BERITA</a>
+              <a class="nav-link" href="{{ url('/gallery-section') }}" data-page="gallery">GALERI</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url('/news-section') }}" data-page="news">BERITA</a>
             </li>
             <li class="nav-item information">
-              <a class="nav-link {{ Request::is('informasi') ? 'active' : '' }}" href="{{ route('informasi') }}">INFORMASI</a>
+              <a class="nav-link" href="{{ route('informasi') }}" data-page="informasi">INFORMASI</a>
             </li>
             <li class="nav-item donation">
-              <a class="nav-link {{ Request::is('donasi') ? 'active' : '' }}" href="{{ route('donasi') }}">DONASI</a>
+              <a class="nav-link" href="{{ route('donasi') }}" data-page="donasi">DONASI</a>
             </li>
             <li class="nav-item ml-0 pl-4 pl-lg-0">
               <a href={{ route('mesjid.register')}} class="btn btn-red">Daftar</a>
@@ -125,34 +126,33 @@
       </div>
     </nav>
   </header>
-  <section class="bg-white">
+  <main id="main-content">
     @yield('content')
-  </section>
-  
-
+  </main>
   <footer>
-  <div class="blue-box">
-    <div class="container">
-    <p class="font-weight-normal text-muted pb-3">Support By</p>
-      <div>
-        <img src="{{ asset('assets/img/okoce.png') }}" width="100" class="img-fluid">
-        <img src="{{ asset('assets/img/okocekemanusiaan.png') }}" width="100" class="img-fluid">
-        <img src="{{ asset('assets/img/gerakansosial.png') }}" width="100" alt="gerakan sosial Ok Oce" class="img-fluid">
-      </div>
-      <strong><p>Perkumpulan Gerakan OK OCE Indonesia</p></strong>
-      <p style="color: grey;">Jl. Tebet Barat Dalam VII No.3, RT.9/RW.6, Tebet Barat, Tebet, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12810</p>
-      <br>
-      <strong><p>Contact Info</p></strong>
-      <div class="contact-info">
-        <a href="https://wa.me/6281234567890" target="_blank" style="color: grey;"><i class="fab fa-whatsapp"></i> 0817220855</a>
-        <a href="mailto:modalberkah.indonesia@gmail.com" target="_blank" style="color: grey;"><i class="fas fa-envelope"></i> modalberkah.indonesia@gmail.com </a>
-        <a href="https://instagram.com/modal.berkah" target="_blank" style="color: grey;"><i class="fab fa-instagram"></i> @modal.berkah</a>
+    <div class="blue-box">
+      <div class="container">
+        <p class="font-weight-normal text-muted pb-3">Support By</p>
+        <div>
+          <img src="{{ asset('assets/img/okoce.png') }}" width="100" class="img-fluid">
+          <img src="{{ asset('assets/img/okocekemanusiaan.png') }}" width="100" class="img-fluid">
+          <img src="{{ asset('assets/img/gerakansosial.png') }}" width="100" alt="gerakan sosial Ok Oce" class="img-fluid">
+        </div>
+        <strong><p>Perkumpulan Gerakan OK OCE Indonesia</p></strong>
+        <p style="color: grey;">Jl. Tebet Barat Dalam VII No.3, RT.9/RW.6, Tebet Barat, Tebet, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12810</p>
+        <br>
+        <strong><p>Contact Info</p></strong>
+        <div class="contact-info">
+          <a href="https://wa.me/6281234567890" target="_blank" style="color: grey;"><i class="fab fa-whatsapp"></i> 0817220855</a>
+          <a href="mailto:modalberkah.indonesia@gmail.com" target="_blank" style="color: grey;"><i class="fas fa-envelope"></i> modalberkah.indonesia@gmail.com </a>
+          <a href="https://instagram.com/modal.berkah" target="_blank" style="color: grey;"><i class="fab fa-instagram"></i> @modal.berkah</a>
+        </div>
       </div>
     </div>
-  </div>
     <div class="footer-box">
-    <div class="container">
-      <p class="text-center p-0 m-0">Copyright © 2024<a href="#" class="px-1" style="color: #E3242B;">Modal Berkah.</a>All rights reserved.</p>
+      <div class="container">
+        <p class="text-center p-0 m-0">Copyright © 2024<a href="#" class="px-1" style="color: #E3242B;">Modal Berkah.</a>All rights reserved.</p>
+      </div>
     </div>
   </footer>
   <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -171,10 +171,33 @@
   <script src="{{ asset('assets/landing-page-sso/js/landingpage.js') }}"></script>
   <script>
     $(function() {
+      // Handle the image modal
       $('.pop').on('click', function() {
         $('.imagepreview').attr('src', $(this).find('img').attr('src'));
         $('#imagemodal').modal('show');   
-      });		
+      });
+
+      // Handle active nav link based on scroll
+      $(window).on('scroll', function() {
+        var scrollPos = $(window).scrollTop();
+        var links = $('.navbar-nav .nav-link');
+
+        links.each(function() {
+          var sectionOffset = $($(this).attr('href')).offset().top;
+          var sectionHeight = $($(this).attr('href')).outerHeight();
+          
+          if (scrollPos >= sectionOffset - 100 && scrollPos < sectionOffset + sectionHeight - 100) {
+            links.removeClass('active');
+            $(this).addClass('active');
+          }
+        });
+      });
+
+      // Handle active nav link based on URL
+      var page = '{{ Request::is('/') ? 'home' : (Request::is('gallery-section') ? 'gallery' : (Request::is('news-section') ? 'news' : (Request::is('informasi') ? 'informasi' : (Request::is('donasi') ? 'donasi' : '')))) }}';
+      if (page) {
+        $('.nav-link[data-page="' + page + '"]').addClass('active');
+      }
     });
   </script>
 </body>
