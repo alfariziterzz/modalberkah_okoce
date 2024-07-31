@@ -5,9 +5,9 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 content">
-          <h1>Modal Berkah</h1>
-          <p>Merupakan program keumatan berbasis lembaga atau masjid yang bertujuan untuk menghimpun dan menyalurkan infaq dalam bentuk pinjaman dana kepada pelaku UMKM tanpa adanya riba.</p>
-          <a href="{{ route('mesjid.register')}}" class="btn btn-custom">Register Now</a>
+          <h1 class="font-weight-semibold" style="color: #1075B0;">MODAL <span style="color: #E3242B;">BERKAH</span></h1>
+          <h6 class="justify-text font-weight-normal text-muted pb-3">Melalui program <strong>Modal Berkah</strong> diharapkan bisa membantu perkembangan wirausaha dan UMKM sekitar Masjid karena bersifat tanpa riba dan tanpa embel-embel bagi hasil untuk ketiga belah pihak (OK OCE, Masjid dan UMKM) Merupakan program keumatan berbasis lembaga atau masjid yang bertujuan untuk menghimpun dan menyalurkan infaq dalam bentuk pinjaman dana kepada pelaku UMKM tanpa adanya riba</h6>
+          <a href="{{ route('mesjid.register')}}" class="btn btn-custom">Daftarkan Masjid Anda Sekarang!</a>
         </div>
         <div class="col-md-6">
           <img src="{{ asset('assets/landing-page-sso/images/Group171.svg') }}" alt="Banner Image">
@@ -184,6 +184,10 @@
     margin-top: 50px;
     margin-bottom: 50px;
   }
+  .justify-text {
+  text-align: justify;
+  line-height: 2rem;
+}
 </style>
 <script>
     $(function() {
@@ -200,6 +204,10 @@
   height: 250px; /* Set a fixed height */
   object-fit: cover; /* Ensures the images cover the area without distortion */
   transition: transform 0.5s ease; /* Smooth transition for the zoom effect */
+  gap: 15px;
+  margin-bottom: 15px;
+  flex: 1 1 calc(50% - 15px); 
+  flex: 1 1 100%;
 }
 .poster img:hover {
   transform: scale(1.1); /* Scale the image to 110% on hover */

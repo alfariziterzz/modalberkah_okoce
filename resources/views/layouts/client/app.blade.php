@@ -139,7 +139,8 @@
           <img src="{{ asset('assets/img/gerakansosial.png') }}" width="100" alt="gerakan sosial Ok Oce" class="img-fluid">
         </div>
         <strong><p>Perkumpulan Gerakan OK OCE Indonesia</p></strong>
-        <p style="color: grey;">Jl. Tebet Barat Dalam VII No.3, RT.9/RW.6, Tebet Barat, Tebet, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12810</p>
+        <a href="https://maps.app.goo.gl/tckUyxttaxnifgkZ7" target="_blank" style="color: grey;"></i>Jl. Tebet Barat Dalam VII No.3, RT.9/RW.6, Tebet Barat, Tebet, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12810</a>
+        <br>
         <br>
         <strong><p>Contact Info</p></strong>
         <div class="contact-info">
