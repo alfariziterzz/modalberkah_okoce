@@ -2,6 +2,125 @@
 
 All Notable changes to `League\Uri\Interfaces` will be documented in this file
 
+## [7.3.1](https://github.com/thephpleague/uri-interfaces/compare/7.3.0...7.3.1) - 2024-02-23
+
+### Added
+
+- None
+
+### Fixed
+
+- Fix package to avoid PHP8.4 deprecation warnings
+
+### Deprecated
+
+- None
+
+### Removed
+
+- None
+
+## [7.3.0](https://github.com/thephpleague/uri-interfaces/compare/7.2.0...7.3.0) - 2023-09-09
+
+### Added
+
+- `League\Uri\Contracts\QueryInterface::withoutPairByKey`
+- `League\Uri\Contracts\QueryInterface::withoutPairByValue`
+- `League\Uri\Contracts\QueryInterface::withoutPairByKeyValue`
+- `League\Uri\Contracts\QueryInterface::toFormData`
+- `League\Uri\Contracts\QueryInterface::withoutPairByKeyValue`
+- `League\Uri\KeyValuePair\Converter::fromFormData`
+- `League\Uri\KeyValuePair\Converter::separator` method
+- `League\Uri\KeyValuePair\Converter::encondingMap` method
+
+### Fixed
+
+- `League\Uri\KeyValuePair\Converter` fix encoding when the value is a float or the boolean `false`
+- Exception message typo fix [#121](https://github.com/thephpleague/uri-src/pull/121) by [GrahamCampbell](https://github.com/GrahamCampbell)
+
+### Deprecated
+
+- `Contracts\QueryInterface\QueryInterface::withoutPair` use `Contracts\QueryInterface\QueryInterface::withoutPairByKey` instead.
+
+### Removed
+
+- None
+
+## [7.2.0](https://github.com/thephpleague/uri/compare/7.1.0...7.2.0) - 2023-08-30
+
+### Added
+
+- `League\Uri\Idna\Converter::isIdn`
+- `League\Uri\Ipv4\Converter::isIpv4`
+
+### Fixed
+
+- Add support for `Stringable` host object in `League\Uri\Idna\Converter` feature.
+- Add support for `Stringable` host object in `League\Uri\Exceptions\ConversionFailed` feature.
+
+### Deprecated
+
+- None
+
+### Removed
+
+- None
+
+## [7.1.0](https://github.com/thephpleague/uri/compare/7.0.0...7.1.0) - 2023-08-21
+
+### Added
+
+- `League\Uri\Encoder` to normalize encoding URI and URI components.
+- `League\Uri\KeyValuePair\Converter` to parse and build key/value pair string.
+
+### Fixed
+
+- Rewrite `QueryString` classes and fix query encoding for basic RFC3986. [#109](https://github.com/thephpleague/uri-src/issues/109)
+
+### Deprecated
+
+- None
+
+### Removed
+
+- None
+
+## [7.0.0](https://github.com/thephpleague/uri/compare/2.3.0...7.0.0)  - 2023-08-10
+
+### Added
+
+- New method to `UriComponentInterface::value`
+- New method to `UriComponentInterface::toString`
+- New method to `UserInfoInterface::withUser`
+- New method to `UserInfoInterface::withPass`
+- New method to `UriInterface::toString`
+- New method to `UriInterface::toComponents`
+- `League\Uri\IPv4` tools
+- `League\Uri\Idna` tools
+- `League\Uri\UriString` parser
+- `League\Uri\QueryString` parser
+
+### Fixed
+
+- None
+
+### Deprecated
+
+- None
+
+### Removed
+
+- Support for PHP7
+- Support for `__set_state`
+- `UriComponentInterface::getContent` is removed in favor of `UriComponentInterface::value`
+- `UriComponentInterface::withContent` is removed with no replacement use other means to change the value of the component.
+- `UserInfoInterface::withUserInfo` is removed in favor of `UserInfoInterface::withUser` and `UserInfoInterface::withPass`.
+- `HostInfoInterface::labels` is removed with no replacement use the `IteratorAggregate::getIterator` method instead.
+- `SegmentedPathInterface::segments` is removed with no replacement use the `IteratorAggregate::getIterator` method instead.
+- `League\Uri\Idna\Idna` use `League\Uri\Idna\Converter` instead
+- `League\Uri\Idna\IdnaInfo` use `League\Uri\Idna\Result` instead
+- `League\Uri\Exception\IdnSupportMissing` use `League\Uri\Exception\MissingFeature` instead
+
 ## 2.3.0 - 2021-06-28
 
 ### Added

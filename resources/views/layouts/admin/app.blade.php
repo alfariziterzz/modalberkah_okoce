@@ -123,7 +123,10 @@
               </button>
             </li>
             <li class="nav-item">
-              <a class="nav-link {{ Request::is('gallery-section') ? 'active' : '' }}" href="{{ url('/') }}">GALERI</a>
+              <a class="nav-link {{ Request::is('admin.dashboard') ? 'active' : '' }}" href="{{ url('/admin/dashboard') }}">DASHBOARD</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {{ Request::is('admin.galleries') ? 'active' : '' }}" href="{{ url('/admin/galleries') }}">GALERI</a>
             </li>
             <li class="nav-item">
               <a class="nav-link {{ Request::is('news-section') ? 'active' : '' }}" href="{{ url('/') }}">BERITA</a>

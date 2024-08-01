@@ -14,11 +14,13 @@ use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\GalleryController;
+
 // Beranda
 
 // Galeri
-
-
 
 // Berita
 
@@ -30,6 +32,40 @@ Route::get('/informasi', function(){
 Route::get('/donasi', function(){
   return view('client.donasi.index');
 })->name('donasi');
+
+
+// Auth
+Route::get('admin/login', [AdminController::class, 'showLoginForm'])->name('admin.login');
+Route::post('admin/login', [AdminController::class, 'login'])->name('admin.login.submit');
+Route::post('admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
+
+// Rute yang membutuhkan autentikasi admin
+Route::middleware(['auth:admin'])->group(function () {
+    Route::get('admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+
+    // Rute untuk manajemen galeri
+    Route::prefix('admin/galleries')->group(function () {
+        // Menampilkan daftar galeri
+        Route::get('/', [GalleryController::class, 'index'])->name('admin.galleries.index');
+
+        // Menampilkan form untuk menambah galeri
+        Route::get('/create', [GalleryController::class, 'create'])->name('admin.galleries.create');
+
+        // Menyimpan galeri baru
+        Route::post('/', [GalleryController::class, 'store'])->name('admin.galleries.store');
+
+        // Menampilkan form untuk mengedit galeri
+        Route::get('/{gallery}/edit', [GalleryController::class, 'edit'])->name('admin.galleries.edit');
+
+        // Memperbarui galeri yang ada
+        Route::put('/{gallery}', [GalleryController::class, 'update'])->name('admin.galleries.update');
+
+        // Menghapus galeri
+        Route::delete('/{gallery}', [GalleryController::class, 'destroy'])->name('admin.galleries.destroy');
+    });
+});
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

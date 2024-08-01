@@ -2,7 +2,176 @@
 
 All Notable changes to `League\Uri` will be documented in this file
 
-## [6.8.0](https://github.com/thephpleague/uri/compare/6.7.2...master) - 2022-09-13
+## [7.4.1](https://github.com/thephpleague/uri/compare/7.4.0...7.4.1) - 2024-02-23
+
+### Added
+
+- None
+
+### Fixed
+
+- Fix package to avoid PHP8.4 deprecation warnings
+
+### Deprecated
+
+- None
+
+### Removed
+
+- None
+
+## [7.4.0](https://github.com/thephpleague/uri/compare/7.3.0...7.4.0) - 2023-12-01
+
+### Added
+
+- `Uri::fromData`
+- `Uri::fromRfc8089`
+- `BaseUri::unixPath`
+- `BaseUri::windowsPath`
+- `BaseUri::toRfc8089`
+
+### Fixed
+
+- None
+
+### Deprecated
+
+- None
+
+### Removed
+
+- None
+
+## [7.3.0](https://github.com/thephpleague/uri/compare/7.2.1...7.3.0) - 2023-09-09
+
+### Added
+
+- None
+
+### Fixed
+
+- URI Template incorrect when variable name only contains numbers [#109](https://github.com/thephpleague/uri-src/issues/119) by [GrahamCampbell](https://github.com/GrahamCampbell)
+- Exception message typo fix [#121](https://github.com/thephpleague/uri-src/pull/121) by [GrahamCampbell](https://github.com/GrahamCampbell)
+
+### Deprecated
+
+- None
+
+### Removed
+
+- None
+
+## [7.2.1](https://github.com/thephpleague/uri-components/compare/7.2.0...7.2.1) - 2023-08-30
+
+### Added
+
+- None
+
+### Fixed
+
+- `composer.json` constraints
+
+### Deprecated
+
+- None
+
+### Removed
+
+- None
+
+## [7.2.0](https://github.com/thephpleague/uri/compare/7.1.0...7.2.0) - 2023-08-30
+
+### Added
+
+- `BasUri::hasIDN`
+
+### Fixed
+
+- None
+
+### Deprecated
+
+- None
+
+### Removed
+
+- None
+
+## [7.1.0](https://github.com/thephpleague/uri/compare/7.0.0...7.1.0) - 2023-08-21
+
+### Added
+
+- None
+
+### Fixed
+
+- Using the `Encoder` class to normalize encoding and decoding in all packages
+
+### Deprecated
+
+- None
+
+### Removed
+
+- None
+
+## [7.0.0](https://github.com/thephpleague/uri/compare/6.8.0...7.0.0) - 2023-08-10
+
+### Added
+
+- `League\Uri\Uri::new`
+- `League\Uri\Uri::fromComponents`
+- `League\Uri\Uri::fromServer`
+- `League\Uri\Uri::fromWindowsPath`
+- `League\Uri\Uri::fromUnixPath`
+- `League\Uri\Uri::fromFileContents`
+- `League\Uri\Uri::fromClient`
+- `League\Uri\Uri::fromTemplate`
+- `League\Uri\Http::new`
+- `League\Uri\Http::fromComponents`
+- `League\Uri\Http::fromBaseUri`
+- `League\Uri\Http::fromServer`
+- `League\Uri\Http::fromTemplate`
+- `League\Uri\UriTemplate::expandOrFail`
+- `League\Uri\UriTemplate\Template::expandOrFail`
+- `League\Uri\UriTemplate\TemplateCanNotBeExpanded`
+- `League\Uri\UriString::parseAuthority`
+- `League\Uri\UriString::buildAuthority`
+- `League\Uri\BaseUri`
+
+### Fixed
+
+- `League\Uri\UriInfo` uri input now supports `Stringable` and `string` type.
+- `League\Uri\UriTemplate\VariableBag` implements the `IteratorAggregate` interface
+- `League\Uri\UriTemplate\Operator` to improve internal representation when using UriTemplate features.
+
+### Deprecated
+
+- `League\Uri\UriResolver` use `League\Uri\BaseUri` instead
+- `League\Uri\Uri::createFromString` use `League\Uri\Uri::new`
+- `League\Uri\Uri::createFromUri` use `League\Uri\Uri::new`
+- `League\Uri\Uri::createFromComponents` use `League\Uri\Uri::fromComponents`
+- `League\Uri\Uri::createFromBaseUri` use `League\Uri\Uri::fromBaseUri`
+- `League\Uri\Uri::createFromServer` use `League\Uri\Uri::fromServer`
+- `League\Uri\Uri::createFromWindowsPath` use `League\Uri\Uri::fromWindowsPath`
+- `League\Uri\Uri::createFromUnixPath` use `League\Uri\Uri::fromUnixPath`
+- `League\Uri\Uri::createFromDataPath` use `League\Uri\Uri::fromFileContents`
+- `League\Uri\Http::createFromString` use `League\Uri\Http::new`
+- `League\Uri\Http::createFromUri` use `League\Uri\Http::new`
+- `League\Uri\Http::createFromComponents` use `League\Uri\Http::fromComponents`
+- `League\Uri\Http::createFromBaseUri` use `League\Uri\Http::fromBaseUri`
+- `League\Uri\Http::createFromServer` use `League\Uri\Http::fromServer`
+- `League\Uri\UriTemplate\Template::createFromString` use `League\Uri\UriTemplate\Template::new`
+
+### Remove
+
+- Support for `__set_state`
+- Support for `__debugInfo`
+- `League\Uri\UriTemplate\VariableBag::all`
+- `League\Uri\Exceptions\TemplateCanNotBeExpanded` use `League\Uri\UriTemplate\TemplateCanNotBeExpanded` instead
+- `League\Uri\UriString` class. Class moved to the `uri-interfaces` package.
+- 
+## [6.8.0](https://github.com/thephpleague/uri/compare/6.7.2...6.8.0) - 2022-09-13
 
 ### Added
 
