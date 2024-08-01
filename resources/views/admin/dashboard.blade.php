@@ -56,7 +56,7 @@
                 <img src="https://png.pngtree.com/png-vector/20190508/ourmid/pngtree-gallery-vector-icon-png-image_1028015.jpg" alt="Galeri"> <!-- Replace with actual image URL -->
                 <h5 class="card-title">Galeri</h5>
                 <p class="card-text">Lihat dan kelola galeri di sini.</p>
-                <a href="{{ url('/admin/galleries') }}" class="btn btn-primary">Lihat Galeri</a>
+                <a href="{{ url('/admin/galeri') }}" class="btn btn-primary">Lihat Galeri</a>
             </div>
         </div>
         <div class="card">
@@ -64,7 +64,7 @@
                 <img src="https://png.pngtree.com/png-vector/20221102/ourmid/pngtree-breaking-news-vector-label-png-image_6413040.png" alt="Berita"> <!-- Replace with actual image URL -->
                 <h2 class="card-title">Berita</h2>
                 <p class="card-text">Lihat dan kelola berita di sini.</p>
-                <a href="{{ url('/news-section') }}" class="btn btn-primary">Lihat Berita</a>
+                <a href="{{ url('/admin/berita') }}" class="btn btn-primary">Lihat Berita</a>
             </div>
         </div>
     </div>

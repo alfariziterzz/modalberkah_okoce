@@ -113,10 +113,10 @@
           <ul class="navbar-nav align-items-lg-center align-items-start ml-auto">
             <li class="d-flex align-items-center justify-content-between pl-4 pl-lg-0">
               <div class="navbar-collapse-logo">
-                <img src="http://127.0.0.1:8000/assets/img/mesjid.png" height="30" alt="">
+                <img src="{{ asset('assets/img/mesjid.png') }}" height="30" alt="">
               </div>
               <div class="navbar-collapse-logo">
-                <img src="http://127.0.0.1:8000/assets/img/logo.png" height="30" alt="">
+                <img src="{{ asset('assets/img/logo.png') }}" height="30" alt="">
               </div>
               <button class="navbar-toggler close-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="mdi mdi-close navbar-toggler-icon pl-5"></span>
@@ -126,10 +126,10 @@
               <a class="nav-link {{ Request::is('admin.dashboard') ? 'active' : '' }}" href="{{ url('/admin/dashboard') }}">DASHBOARD</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {{ Request::is('admin.galleries') ? 'active' : '' }}" href="{{ url('/admin/galleries') }}">GALERI</a>
+              <a class="nav-link {{ Request::is('admin.galleries') ? 'active' : '' }}" href="{{ url('/admin/galeri') }}">GALERI</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {{ Request::is('news-section') ? 'active' : '' }}" href="{{ url('/') }}">BERITA</a>
+              <a class="nav-link {{ Request::is('news-section') ? 'active' : '' }}" href="{{ url('/admin/berita') }}">BERITA</a>
             </li>
             <li class="nav-item btn-logout">
               <form action="{{ route('admin.logout') }}" method="POST">

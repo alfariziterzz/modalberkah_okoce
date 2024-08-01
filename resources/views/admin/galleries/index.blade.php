@@ -34,5 +34,8 @@
             @endforeach
         </tbody>
     </table>
+    <div class="d-flex justify-content-center mt-4">
+    {{ $galleries->links('vendor.pagination.simple-custom') }}
+    </div>
 </div>
 @endsection

@@ -27,7 +27,7 @@ $customizerHidden = 'customizer-hide';
 @endsection
 
 @section('content')
-<div class="authentication-wrapper authentication-bg">
+<div class="authentication-bg">
   <div class="authentication-inner row d-flex justify-content-center align-items-center vh-100">
     <!-- Login -->
     <div class="d-flex col-12 col-lg-5 align-items-center p-sm-5 p-4">

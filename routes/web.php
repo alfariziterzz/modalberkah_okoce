@@ -14,6 +14,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\ClientGalleryController;
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\GalleryController;
@@ -21,6 +22,7 @@ use App\Http\Controllers\Admin\GalleryController;
 // Beranda
 
 // Galeri
+Route::get('/galeri', [ClientGalleryController::class, 'index'])->name('client.galleries.index');
 
 // Berita
 
@@ -44,7 +46,7 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::get('admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
 
     // Rute untuk manajemen galeri
-    Route::prefix('admin/galleries')->group(function () {
+    Route::prefix('admin/galeri')->group(function () {
         // Menampilkan daftar galeri
         Route::get('/', [GalleryController::class, 'index'])->name('admin.galleries.index');
 

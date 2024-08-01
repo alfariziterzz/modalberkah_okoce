@@ -104,7 +104,7 @@
               <a class="nav-link" href="{{ url('/') }}" data-page="home">BERANDA</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ url('/gallery-section') }}" data-page="gallery">GALERI</a>
+              <a class="nav-link" href="{{ url('/galeri') }}" data-page="galeri">GALERI</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ url('/news-section') }}" data-page="news">BERITA</a>
@@ -195,7 +195,7 @@
       });
 
       // Handle active nav link based on URL
-      var page = '{{ Request::is('/') ? 'home' : (Request::is('gallery-section') ? 'gallery' : (Request::is('news-section') ? 'news' : (Request::is('informasi') ? 'informasi' : (Request::is('donasi') ? 'donasi' : '')))) }}';
+      var page = '{{ Request::is('/') ? 'home' : (Request::is('galeri') ? 'galeri' : (Request::is('news-section') ? 'news' : (Request::is('informasi') ? 'informasi' : (Request::is('donasi') ? 'donasi' : '')))) }}';
       if (page) {
         $('.nav-link[data-page="' + page + '"]').addClass('active');
       }
