@@ -23,8 +23,8 @@
         </div>
         <center>
             <div class="form-group">
-                <button type="submit" class="btn btn-primary">Save</button>
-                <a href="{{ route('admin.galleries.index') }}" class="btn btn-danger">Cancel</a>
+                <button type="submit" class="btn btn-primary">Simpan</button>
+                <a href="{{ route('admin.galleries.index') }}" class="btn btn-danger">Batal</a>
             </div>
         </center>
     </form>

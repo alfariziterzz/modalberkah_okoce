@@ -112,7 +112,7 @@
       </div>
       <div class="row mt-3">
         <div class="col-12 text-center">
-          <a href="#" class="btn btn-primary btn-block">Lihat Berita Lainnya</a>
+          <a href="{{ url('/berita') }}" class="btn btn-primary btn-block">Lihat Berita Lainnya</a>
         </div>
       </div>
     </section>

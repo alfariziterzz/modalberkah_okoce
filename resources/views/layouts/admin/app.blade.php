@@ -129,7 +129,7 @@
               <a class="nav-link {{ Request::is('admin.galleries') ? 'active' : '' }}" href="{{ url('/admin/galeri') }}">GALERI</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {{ Request::is('news-section') ? 'active' : '' }}" href="{{ url('/admin/berita') }}">BERITA</a>
+              <a class="nav-link {{ Request::is('admin.news') ? 'active' : '' }}" href="{{ url('/admin/berita') }}">BERITA</a>
             </li>
             <li class="nav-item btn-logout">
               <form action="{{ route('admin.logout') }}" method="POST">

@@ -20,8 +20,8 @@
             </div>
         @endif
         <center>
-        <button type="submit" class="btn btn-primary">Update</button>
-        <a href="{{ route('admin.galleries.index') }}" class="btn btn-danger">Cancel</a>
+        <button type="submit" class="btn btn-primary">Perbarui</button>
+        <a href="{{ route('admin.galleries.index') }}" class="btn btn-danger">Batal</a>
 </center>
     </form>
 </div>

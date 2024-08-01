@@ -10,7 +10,7 @@ class ClientGalleryController extends Controller
     public function index()
     {
         // Mengambil galeri dengan pagination, 12 item per halaman
-        $galleries = Gallery::orderBy('created_at', 'desc')->paginate(9);
+        $galleries = Gallery::orderBy('created_at', 'desc')->paginate(3);
 
         return view('client.galleries.index', compact('galleries'));
     }

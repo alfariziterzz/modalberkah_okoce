@@ -11,7 +11,7 @@ class GalleryController extends Controller
 {
     public function index()
     {
-    $galleries = Gallery::orderBy('created_at', 'desc')->paginate(10);
+    $galleries = Gallery::orderBy('created_at', 'desc')->paginate(2);
     return view('admin.galleries.index', compact('galleries'));
     }
 

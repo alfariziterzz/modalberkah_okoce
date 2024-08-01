@@ -15,9 +15,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ClientGalleryController;
+use App\Http\Controllers\ClientNewsController;
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\GalleryController;
+use App\Http\Controllers\Admin\NewsController;
 
 // Beranda
 
@@ -25,6 +27,9 @@ use App\Http\Controllers\Admin\GalleryController;
 Route::get('/galeri', [ClientGalleryController::class, 'index'])->name('client.galleries.index');
 
 // Berita
+Route::get('/berita', [ClientNewsController::class, 'index'])->name('client.news.index');
+Route::get('/berita/{news}', [ClientNewsController::class, 'show'])->name('client.news.show');
+
 
 // Informasi
 Route::get('/informasi', function(){
@@ -65,6 +70,16 @@ Route::middleware(['auth:admin'])->group(function () {
         // Menghapus galeri
         Route::delete('/{gallery}', [GalleryController::class, 'destroy'])->name('admin.galleries.destroy');
     });
+
+    Route::prefix('admin/berita')->group(function () {
+      Route::get('/', [NewsController::class, 'index'])->name('admin.news.index');
+      Route::get('/create', [NewsController::class, 'create'])->name('admin.news.create');
+      Route::post('/', [NewsController::class, 'store'])->name('admin.news.store');
+      Route::get('/{news}/edit', [NewsController::class, 'edit'])->name('admin.news.edit');
+      Route::put('/{news}', [NewsController::class, 'update'])->name('admin.news.update');
+      Route::delete('/{news}', [NewsController::class, 'destroy'])->name('admin.news.destroy');
+  });
+  
 });
 
 
