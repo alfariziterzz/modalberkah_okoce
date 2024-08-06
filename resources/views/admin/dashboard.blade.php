@@ -47,7 +47,7 @@
 </head>
 @section('content')
 <body>
-    <div class="container welcome-heading">
+<div class="container welcome-heading">
         <center><h2>Selamat Datang di Dashboard Admin CMS Modal Berkah</h2></center>
     </div>
     <div class="container card-container">

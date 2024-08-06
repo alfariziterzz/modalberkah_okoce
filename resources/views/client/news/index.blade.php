@@ -22,7 +22,7 @@
                     </div>
                 </div>
             @endforeach
-</div>
+  </div>
 <div class="d-flex justify-content-center mt-4">
     {{ $news->links('vendor.pagination.simple-custom') }}
     </div>

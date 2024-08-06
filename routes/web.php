@@ -30,11 +30,11 @@ Route::get('/galeri', [ClientGalleryController::class, 'index'])->name('client.g
 Route::get('/berita', [ClientNewsController::class, 'index'])->name('client.news.index');
 Route::get('/berita/{news}', [ClientNewsController::class, 'show'])->name('client.news.show');
 
-
 // Informasi
 Route::get('/informasi', function(){
   return view('client.informasi.index');
 })->name('informasi');
+
 // Donasi
 Route::get('/donasi', function(){
   return view('client.donasi.index');
@@ -46,7 +46,7 @@ Route::get('admin/login', [AdminController::class, 'showLoginForm'])->name('admi
 Route::post('admin/login', [AdminController::class, 'login'])->name('admin.login.submit');
 Route::post('admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
 
-// Rute yang membutuhkan autentikasi admin
+// Autentikasi admin untuk masuk ke dashboard
 Route::middleware(['auth:admin'])->group(function () {
     Route::get('admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
 
@@ -71,12 +71,19 @@ Route::middleware(['auth:admin'])->group(function () {
         Route::delete('/{gallery}', [GalleryController::class, 'destroy'])->name('admin.galleries.destroy');
     });
 
+    // Manajemen berita
     Route::prefix('admin/berita')->group(function () {
+      // Menampilkan daftar berita
       Route::get('/', [NewsController::class, 'index'])->name('admin.news.index');
+      // Menampilkan form untuk menambah berita
       Route::get('/create', [NewsController::class, 'create'])->name('admin.news.create');
+      // Menyimpan berita baru
       Route::post('/', [NewsController::class, 'store'])->name('admin.news.store');
+      // Menampilkan form untuk mengedit berita
       Route::get('/{news}/edit', [NewsController::class, 'edit'])->name('admin.news.edit');
+      // Memperbarui berita yang ada
       Route::put('/{news}', [NewsController::class, 'update'])->name('admin.news.update');
+      // Menghapus berita
       Route::delete('/{news}', [NewsController::class, 'destroy'])->name('admin.news.destroy');
   });
   

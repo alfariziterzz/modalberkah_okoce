@@ -5,13 +5,13 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 content">
-          <h1 class="font-weight-semibold" style="color: #1075B0;">MODAL <span style="color: #E3242B;">BERKAH</span></h1>
+          <h1 class="font-weight-semibold" style="color: #404040;">MODAL BERKAH</h1>
           <h6 class="justify-text font-weight-normal text-muted pb-3">Melalui program <strong>Modal Berkah</strong> diharapkan bisa membantu perkembangan wirausaha dan UMKM sekitar Masjid karena bersifat tanpa riba dan tanpa embel-embel bagi hasil untuk ketiga belah pihak (OK OCE, Masjid dan UMKM) Merupakan program keumatan berbasis lembaga atau masjid yang bertujuan untuk menghimpun dan menyalurkan infaq dalam bentuk pinjaman dana kepada pelaku UMKM tanpa adanya riba</h6>
           <a href="{{ route('mesjid.register')}}" class="btn btn-custom">Daftarkan Masjid Anda Sekarang!</a>
         </div>
         <div class="col-md-6">
-          <img src="{{ asset('assets/landing-page-sso/images/Group171.svg') }}" alt="Banner Image">
-        </div>
+      <img src="{{ asset('assets/img/image-modalberkah.jpg') }}" alt="Banner Image" style="border-radius: 40%; margin-top: 20px;">
+      </div>
       </div>
     </div>
   </div>
@@ -68,54 +68,19 @@
         </div>
     </div>
     </section>
-    <section class="case-studies mt-5" id="news-section">
-      <div class="col-12 text-center pb-5">
-        <h2 style="color: #1075B0; font-weight: 600;">Berita Terkini</h2>
-      </div>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card">
-            <img src="{{ asset('assets/landing-page-sso/images/4.jpeg') }}" class="card-img-top" alt="...">
-            <div class="card-body d-flex flex-column text-center">
-              <h5 class="card-title">Gandeng masjid di Yogyakarta, Sandiaga Uno luncurkan Modal Berkah</h5>
-              <p class="card-text">Sandiaga Uno meluncurkan program Modal Berkah bagi pelaku UMKM binaan Masjid Jogokariyan, Kota Yogyakarta, Senin (29/8).</p>
-              <div class="mt-auto">
-                <a href="#" class="btn btn-primary btn-block">Baca Selengkapnya</a>
-              </div>
+    <section class="video-section mt-5">
+            <div class="content-header text-center">
+            <h2 style="color: #1075B0; font-weight: 600;">Video Penjelasan Program Modal Berkah</h2>
+            <h6 class="section-subtitle text-muted">Solusi Modal Usaha Tanpa Riba Bagi UMKM</h6>
             </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <img src="{{ asset('assets/landing-page-sso/images/4.jpeg') }}" class="card-img-top" alt="...">
-            <div class="card-body d-flex flex-column text-center">
-              <h5 class="card-title">Gandeng masjid di Yogyakarta, Sandiaga Uno luncurkan Modal Berkah</h5>
-              <p class="card-text">Sandiaga Uno meluncurkan program Modal Berkah bagi pelaku UMKM binaan Masjid Jogokariyan, Kota Yogyakarta, Senin (29/8).</p>
-              <div class="mt-auto">
-                <a href="#" class="btn btn-primary btn-block">Baca Selengkapnya</a>
-              </div>
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8 mt-5">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Ty4PuC0Yl_4?si=xrfhM30XSCZVOYn6" allowfullscreen></iframe>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <img src="{{ asset('assets/landing-page-sso/images/4.jpeg') }}" class="card-img-top" alt="...">
-            <div class="card-body d-flex flex-column text-center">
-              <h5 class="card-title">Gandeng masjid di Yogyakarta, Sandiaga Uno luncurkan Modal Berkah</h5>
-              <p class="card-text">Sandiaga Uno meluncurkan program Modal Berkah bagi pelaku UMKM binaan Masjid Jogokariyan, Kota Yogyakarta, Senin (29/8).</p>
-              <div class="mt-auto">
-                <a href="#" class="btn btn-primary btn-block">Baca Selengkapnya</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row mt-3">
-        <div class="col-12 text-center">
-          <a href="{{ url('/berita') }}" class="btn btn-primary btn-block">Lihat Berita Lainnya</a>
-        </div>
-      </div>
-    </section>
+        </section>
   </div>
 </div>
 <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -208,6 +173,7 @@
   margin-bottom: 15px;
   flex: 1 1 calc(50% - 15px); 
   flex: 1 1 100%;
+  border-radius:calc(.25rem - 1px);
 }
 .poster img:hover {
   transform: scale(1.1); /* Scale the image to 110% on hover */

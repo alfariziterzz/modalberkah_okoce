@@ -25,8 +25,10 @@
             <label for="posted_at">Tanggal Posting</label>
             <input type="date" name="posted_at" id="posted_at" class="form-control" value="{{ $news->posted_at }}" required>
         </div>
+        <center>
         <button type="submit" class="btn btn-primary">Simpan</button>
         <a href="{{ route('admin.news.index') }}" class="btn btn-danger">Batal</a>
+</center>
     </form>
 </div>
 @endsection

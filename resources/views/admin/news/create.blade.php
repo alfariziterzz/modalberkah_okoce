@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <center><h2 style="margin-top: 50px; margin-bottom: 20px;">Tambahkan Berita</h2></center>
+    <center><h2 style="margin-top: 50px; margin-bottom: 20px;">Tambah Berita</h2></center>
     <form action="{{ route('admin.news.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
@@ -21,8 +21,10 @@
             <label for="posted_at">Tanggal Posting</label>
             <input type="date" name="posted_at" id="posted_at" class="form-control" required>
         </div>
+        <center>
         <button type="submit" class="btn btn-primary">Simpan</button>
         <a href="{{ route('admin.news.index') }}" class="btn btn-danger">Batal</a>
+</center>
     </form>
 </div>
 @endsection
